@@ -3,8 +3,8 @@ var app = new Vue({
     data: {
         newtodo: '',
         Todos: [{
-            id: '345',
-            title: '你好嗎?',
+            id: '123',
+            title: '你好，這是我的 Todo list 練習',
             completed: false
         }],
         visbility: 'all',
@@ -74,14 +74,15 @@ var app = new Vue({
             }
             return [];
         },
-        undoneRecords: function() {
-            var undoneRecords = [];
-            this.todos.forEach(function(item) {
+
+        undone: function() {
+            var undone = [];
+            this.Todos.forEach((item) => {
                 if (!item.completed) {
-                    undoneRecords.push(item);
+                    undone.push(item)
                 }
             })
-            return undoneRecords.length;
+            return undone.length;
         }
-    },
+    }
 })
