@@ -1,5 +1,6 @@
 var app = new Vue({
     el: '#app',
+    // 資料結構
     data: {
         newtodo: '',
         Todos: [{
@@ -11,6 +12,7 @@ var app = new Vue({
         cacheTodo: {},
         cacheTitle: '',
     },
+    // 使用哪些方法
     methods: {
         addtodo: function() {
             // .trim() 清除多餘的空白
@@ -51,6 +53,7 @@ var app = new Vue({
             this.Todos = [];
         }
     },
+    // 做了那些處理
     computed: {
         filteredTodos: function() {
             if (this.visbility == 'all') {
@@ -74,7 +77,6 @@ var app = new Vue({
             }
             return [];
         },
-
         undone: function() {
             var undone = [];
             this.Todos.forEach((item) => {
